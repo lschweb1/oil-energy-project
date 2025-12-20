@@ -1,0 +1,44 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# ---- Virtual environments ----
+.env/
+.venv/
+venv/
+ENV/
+env/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ---- Data files that should not be versioned ----
+*.parquet
+*.csv
+*.h5
+*.xlsx
+*.zip
+
+# ---- Outputs ----
+results/*.png
+results/*.csv
+results/*.txt
+results/*.parquet
+
+# Keep the README
+!README.md
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+
+# ---- VSCode ----
+.vscode/
