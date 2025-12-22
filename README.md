@@ -37,7 +37,8 @@ notebooks/
 
 outputs/
 ├── results/
-└── plots/
+├── plots/
+└── executed_08_final_economic_analysis.ipynb
 
 main.py
 environment.yml
