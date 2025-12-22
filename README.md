@@ -20,24 +20,30 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 
 ## Project structure
 
-├── data/  
-│   ├── log_returns_2018_2024.parquet  
-│   ├── model_features_2018_2024.parquet  
-│   └── prices_2018_2024.parquet  
-│  
-├── notebooks/  
-│   ├── 01_data_download.ipynb  
-│   ├── 02_log_returns.ipynb  
-│   ├── 03_feature_engineering.ipynb  
-│   ├── 04_modeling.ipynb  
-│   ├── 05_modeling_final.ipynb  
-│   ├── 06_time_series_validation.ipynb  
-│   ├── 07_oil_shock_analysis.ipynb  
-│   └── 08_final_economic_analysis.ipynb  
-│  
-├── main.py  
-├── README.md  
-└── requirements.txt
+data/
+├── log_returns_2018_2024.parquet
+├── model_features_2018_2024.parquet
+└── prices_2018_2024.parquet
+
+notebooks/
+├── 01_data_download.ipynb
+├── 02_log_returns.ipynb
+├── 03_feature_engineering.ipynb
+├── 04_modeling.ipynb
+├── 05_modeling_final.ipynb
+├── 06_time_series_validation.ipynb
+├── 07_oil_shock_analysis.ipynb
+└── 08_final_economic_analysis.ipynb
+
+outputs/
+├── results/
+└── plots/
+
+main.py
+environment.yml
+requirements.txt
+README.md
+
 
 ---
 
@@ -87,16 +93,27 @@ Synthesizes modeling and shock analysis results and provides an economic interpr
 - Fossil fuel and renewable-related assets exhibit heterogeneous reactions to extreme oil price movements.
 - The results suggest weaker dependence between oil prices and renewable-related assets rather than full structural independence.
 
+All numerical results are saved to `outputs/results/`, and figures are saved to `outputs/plots/`.
+
 ---
 
 ## Requirements
-- Python 3.x  
-- pandas, numpy  
-- scikit-learn  
-- matplotlib, seaborn  
+- Python 3.11
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+- pyarrow
+- nbformat
+- nbconvert
 - yfinance
 
 ---
 
-## Author
-Luca Schweblin
+## Environment setup
+
+```bash
+conda env create -f environment.yml
+conda activate oil-energy-project
+python main.py
