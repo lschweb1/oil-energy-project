@@ -24,9 +24,7 @@ data/*.csv
 *.zip
 
 # ---- Outputs ----
-outputs/**/*.png
-outputs/**/*.parquet
-outputs/**/*.txt
+outputs/
 
 # Keep final result tables
 !outputs/results/*.csv
