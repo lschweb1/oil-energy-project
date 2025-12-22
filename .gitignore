@@ -11,27 +11,25 @@ __pycache__/
 .venv/
 venv/
 ENV/
-env/
 
 # ---- Jupyter ----
 .ipynb_checkpoints/
 *.nbconvert.ipynb
 
-# ---- Data files that should not be versioned ----
-*.parquet
-*.csv
+# ---- Data files (not versioned) ----
+data/*.parquet
+data/*.csv
 *.h5
 *.xlsx
 *.zip
 
 # ---- Outputs ----
-results/*.png
-results/*.csv
-results/*.txt
-results/*.parquet
+outputs/**/*.png
+outputs/**/*.parquet
+outputs/**/*.txt
 
-# Keep the README
-!README.md
+# Keep final result tables
+!outputs/results/*.csv
 
 # ---- OS junk ----
 .DS_Store
