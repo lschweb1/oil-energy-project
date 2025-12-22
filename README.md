@@ -25,10 +25,6 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 │   ├── model_features_2018_2024.parquet  
 │   └── prices_2018_2024.parquet  
 │  
-├── outputs/  
-│   ├── plots/  
-│   └── results/  
-│  
 ├── notebooks/  
 │   ├── 01_data_download.ipynb  
 │   ├── 02_log_returns.ipynb  
@@ -39,7 +35,9 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 │   ├── 07_oil_shock_analysis.ipynb  
 │   └── 08_final_economic_analysis.ipynb  
 │  
-└── README.md
+├── main.py  
+├── README.md  
+└── requirements.txt
 
 ---
 
