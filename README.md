@@ -39,7 +39,7 @@ oil-energy-project/
 ├── outputs/  
 │   ├── results/  
 │   ├── plots/  
-│   └── executed_08_final_economic_analysis.ipynb  
+│   └── executed_08_final_economic_analysis.ipynb # Executed version 
 │  
 ├── main.py  
 ├── environment.yml  
