@@ -19,8 +19,6 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 ---
 
 ## Project structure
-text
-Copier le code
 data/
 ├── log_returns_2018_2024.parquet
 ├── model_features_2018_2024.parquet
