@@ -17,12 +17,11 @@ test_env/
 .ipynb_checkpoints/
 *.nbconvert.ipynb
 
-# ---- Data files (not versioned) ----
-data/*.parquet
-data/*.csv
-*.h5
-*.xlsx
-*.zip
+# ---- Data files ----
+data/*
+!data/log_returns_2018_2024.parquet
+!data/model_features_2018_2024.parquet
+!data/prices_2018_2024.parquet
 
 # Keep final result tables
 !outputs/results/*.csv
