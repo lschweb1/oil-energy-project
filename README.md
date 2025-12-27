@@ -21,31 +21,47 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 
 ## Project structure
 
-oil-energy-project/  
-├── data/  
-│   ├── log_returns_2018_2024.parquet  
-│   ├── model_features_2018_2024.parquet  
-│   └── prices_2018_2024.parquet  
-│  
-├── notebooks/  
-│   ├── 01_data_download.ipynb  
-│   ├── 02_log_returns.ipynb  
-│   ├── 03_feature_engineering.ipynb  
-│   ├── 04_modeling.ipynb  
-│   ├── 05_modeling_final.ipynb  
-│   ├── 06_time_series_validation.ipynb  
-│   ├── 07_oil_shock_analysis.ipynb  
-│   └── 08_final_economic_analysis.ipynb  
-│  
-├── outputs/  
-│   ├── results/  
-│   ├── plots/  
-│   └── executed_08_final_economic_analysis.ipynb # Executed version 
-│  
-├── main.py  
-├── environment.yml  
-├── requirements.txt  
-└── README.md  
+oil-energy-project/
+├── data/
+│   ├── raw/
+│   ├── log_returns_2018_2024.parquet
+│   ├── model_features_2018_2024.parquet
+│   └── prices_2018_2024.parquet
+│
+├── notebooks/
+│   ├── executed/
+│   │   └── 08_final_economic_analysis.executed.ipynb
+│   ├── 01_data_download.ipynb
+│   ├── 02_log_returns.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   ├── 04_modeling.ipynb
+│   ├── 05_modeling_final.ipynb
+│   ├── 06_time_series_validation.ipynb
+│   ├── 07_oil_shock_analysis.ipynb
+│   └── 08_final_economic_analysis.ipynb
+│
+├── outputs/
+│   ├── plots/
+│   └── results/
+│
+├── results/
+│   └── figures/
+│       ├── error_hist/
+│       ├── r2_timeseries/
+│       ├── shock/
+│       └── true_vs_pred/
+│
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py
+│   ├── models.py
+│   └── evaluation.py
+│
+├── main.py
+├── project_report.md
+├── README.md
+├── environment.yml
+└── requirements.txt
 
 ---
 
