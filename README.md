@@ -15,6 +15,7 @@ Daily price data are obtained from Yahoo Finance for the period 2018–2024:
 - iShares Global Clean Energy ETF (ICLN)
 
 Prices are aligned on common trading dates and transformed into log-returns for modeling purposes.
+**Raw data:** No static raw files are stored in the repository, as price data are downloaded programmatically (see `notebooks/01_data_download.ipynb`).
 
 ---
 
@@ -79,6 +80,8 @@ Analyzes the average reaction of energy-related assets around these events.
 
 ### 08_final_economic_analysis.ipynb
 Synthesizes modeling and shock analysis results and provides an economic interpretation of the findings.
+
+**Executed notebook:** `notebooks/executed/08_final_economic_analysis.executed.ipynb` is an executed version used for local validation.
 
 ---
 
