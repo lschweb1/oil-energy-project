@@ -21,13 +21,13 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 
 ## Project structure
 
+```text
 oil-energy-project/
 ├── data/
 │   ├── raw/
 │   ├── log_returns_2018_2024.parquet
 │   ├── model_features_2018_2024.parquet
 │   └── prices_2018_2024.parquet
-│
 ├── notebooks/
 │   ├── executed/
 │   │   └── 08_final_economic_analysis.executed.ipynb
@@ -39,29 +39,27 @@ oil-energy-project/
 │   ├── 06_time_series_validation.ipynb
 │   ├── 07_oil_shock_analysis.ipynb
 │   └── 08_final_economic_analysis.ipynb
-│
 ├── outputs/
 │   ├── plots/
 │   └── results/
-│
 ├── results/
 │   └── figures/
 │       ├── error_hist/
 │       ├── r2_timeseries/
 │       ├── shock/
 │       └── true_vs_pred/
-│
 ├── src/
 │   ├── __init__.py
 │   ├── data_loader.py
 │   ├── models.py
 │   └── evaluation.py
-│
+├── .gitignore
+├── environment.yml
 ├── main.py
 ├── project_report.md
 ├── README.md
-├── environment.yml
 └── requirements.txt
+```
 
 ---
 
