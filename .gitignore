@@ -23,8 +23,9 @@ data/*
 !data/model_features_2018_2024.parquet
 !data/prices_2018_2024.parquet
 
-# Keep final result tables
+# Keep final result tables (CSV + Parquet)
 !outputs/results/*.csv
+!outputs/results/*.parquet
 
 # ---- OS junk ----
 .DS_Store
