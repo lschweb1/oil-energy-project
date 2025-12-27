@@ -94,7 +94,8 @@ Synthesizes modeling and shock analysis results and provides an economic interpr
 - Fossil fuel and renewable-related assets exhibit heterogeneous reactions to extreme oil price movements.
 - The results suggest weaker dependence between oil prices and renewable-related assets rather than full structural independence.
 
-All numerical outputs are saved to the outputs/results directory, and figures are saved to the outputs/plots directory.
+**Results:** All final figures required for grading are available under `results/figures/`.  
+Intermediate artifacts produced during notebook execution are stored under `outputs/` (e.g., `outputs/plots/` and `outputs/results/`).
 
 ---
 
