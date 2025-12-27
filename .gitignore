@@ -35,3 +35,7 @@ Thumbs.db
 
 # ---- VSCode ----
 .vscode/
+
+# Outputs accidentally created inside notebooks/
+notebooks/outputs/
+notebooks/executed/outputs/
