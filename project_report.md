@@ -1,13 +1,33 @@
-# Table of Contents
+---
+geometry:
+  - left=2.5cm
+  - right=2.5cm
+  - top=2.5cm
+  - bottom=3cm
+---
 
-1. [Introduction](#introduction)
-2. [Literature Review](#literature-review)
-3. [Methodology](#methodology)
-4. [Results](#results)
-5. [Discussion](#discussion)
-6. [Conclusion](#conclusion)
-7. [References](#references)
-8. [Appendices](#appendices)
+\thispagestyle{empty}
+
+\vspace*{3cm}
+
+\begin{center}
+{\LARGE \textbf{Impact of Oil Prices on the Stock Performance of Fossil and Renewable Energy Sectors}}\\[2cm]
+
+{\large Luca Schweblin}\\[0.5cm]
+{\large \textit{Université de Lausanne}}\\[0.3cm]
+{\large MSc. in Finance}\\[0.3cm]
+{\large luca.schweblin@unil.ch}
+\end{center}
+
+\newpage
+\pagenumbering{arabic}
+
+\tableofcontents
+\newpage
+
+**Abstract**
+
+**This project examines how crude oil price dynamics relate to the financial performance of energy-sector equities, with a focus on differences between fossil fuel and renewable energy markets. Using daily data from 2018–2024 for WTI crude oil futures (CL=F), the Energy Select Sector SPDR Fund (XLE), and the iShares Global Clean Energy ETF (ICLN), prices are transformed into log-returns and used in a forecasting setup. Predictors are constructed from lagged oil returns and rolling-window statistics to capture delayed and local effects. Predictive performance is assessed with an interpretable multiple linear regression benchmark and a Random Forest regressor to allow for nonlinearities and interactions. Evaluation relies on a strict chronological train–test split and a walk-forward validation procedure to avoid information leakage and to study temporal stability. The results suggest a stronger and more stable predictive relationship between oil dynamics and fossil fuel equities (XLE), while predictive performance for renewable energy equities (ICLN) appears weaker and less consistent across time. An event-based oil shock analysis further indicates more pronounced and directionally consistent reactions for XLE, whereas ICLN responses are more diffuse. Overall, oil-related information appears more informative for forecasting fossil-sector returns than renewable-sector returns at a daily frequency.**
 
 # 1. Introduction
 
@@ -256,6 +276,7 @@ Several extensions could be considered to further explore the oil–energy relat
 
 From a data perspective, enriching the feature set with macroeconomic indicators, volatility measures, or expectations-based variables could provide additional predictive content. Finally, future work could shift the focus from statistical accuracy to economic relevance by evaluating trading strategies, risk-adjusted performance, or portfolio-level implications, offering a more applied perspective on the economic impact of oil price fluctuations.
 
+\clearpage
 # References
 
 Hamilton, J. D. (2009). Causes and consequences of the oil shock of 2007–08. *Brookings Papers on Economic Activity*, 40(1), 215–261. https://doi.org/10.3386/w15002
@@ -272,6 +293,7 @@ Tsay, R. S. (2006). *Analysis of Financial Time Series* (2nd ed.). Technometrics
 
 Yahoo Finance. (2025). Financial market data. https://finance.yahoo.com/
 
+\clearpage
 # Appendices
 
 ## Appendix A: Additional Results
@@ -283,61 +305,3 @@ Yahoo Finance. (2025). Financial market data. https://finance.yahoo.com/
 ## Appendix B: Code Repository
 
 **GitHub Repository:** https://github.com/lschweb1/oil-energy-project.git
-
-### Repository Structure
-
-```
-project-repo/
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── raw/
-│   └── processed/
-├── src/
-│   ├── preprocessing.py
-│   ├── models.py
-│   └── evaluation.py
-├── notebooks/
-│   └── exploration.ipynb
-└── results/
-    └── figures/
-```
-
-### Installation Instructions
-
-```bash
-git clone https://github.com/yourusername/project-repo
-cd project-repo
-pip install -r requirements.txt
-```
-
-### Reproducing Results
-
-```bash
-python src/main.py --config config.yaml
-```
-
----
-
-*Note: This report should be exactly 10 pages when rendered. Use the page count in your PDF viewer to verify.*
-
----
-
-## Conversion to PDF
-
-To convert this Markdown file to PDF, use pandoc:
-
-```bash
-pandoc project_report.md -o project_report.pdf --pdf-engine=xelatex
-```
-
-Or with additional options:
-
-```bash
-pandoc project_report.md \
-  -o project_report.pdf \
-  --pdf-engine=xelatex \
-  --highlight-style=pygments \
-  --toc \
-  --number-sections
-```

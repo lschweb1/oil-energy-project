@@ -23,14 +23,17 @@ Prices are aligned on common trading dates and transformed into log-returns for 
 
 ```text
 oil-energy-project/
+│
 ├── data/
-│   ├── raw/
+│   ├── raw/                         # No static raw files (data downloaded programmatically)
+│   ├── prices_2018_2024.parquet     # Clean price data
 │   ├── log_returns_2018_2024.parquet
-│   ├── model_features_2018_2024.parquet
-│   └── prices_2018_2024.parquet
+│   └── model_features_2018_2024.parquet
+│
+├── docs/
+│   └── project_proposal.pdf         # Original project proposal (PDF)
+│
 ├── notebooks/
-│   ├── executed/
-│   │   └── 08_final_economic_analysis.executed.ipynb
 │   ├── 01_data_download.ipynb
 │   ├── 02_log_returns.ipynb
 │   ├── 03_feature_engineering.ipynb
@@ -38,27 +41,34 @@ oil-energy-project/
 │   ├── 05_modeling_final.ipynb
 │   ├── 06_time_series_validation.ipynb
 │   ├── 07_oil_shock_analysis.ipynb
-│   └── 08_final_economic_analysis.ipynb
+│   ├── 08_final_economic_analysis.ipynb
+│   └── executed/
+│       └── 08_final_economic_analysis.executed.ipynb
+│
 ├── outputs/
-│   ├── plots/
-│   └── results/
+│   └── plots/                       # Generated plots
+│
 ├── results/
 │   └── figures/
 │       ├── error_hist/
 │       ├── r2_timeseries/
 │       ├── shock/
 │       └── true_vs_pred/
+│
 ├── src/
 │   ├── __init__.py
 │   ├── data_loader.py
 │   ├── models.py
 │   └── evaluation.py
-├── .gitignore
-├── environment.yml
-├── main.py
-├── project_report.md
+│
+├── main.py                          # Entry point (fully reproducible)
+├── PROPOSAL.md                      # Project proposal (Markdown)
+├── project_report.md                # Final report (Markdown)
+├── project_report.pdf               # Final report (PDF)
 ├── README.md
-└── requirements.txt
+├── environment.yml
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
