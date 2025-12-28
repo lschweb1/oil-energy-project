@@ -29,7 +29,7 @@ geometry:
 
 **This project examines how crude oil price dynamics relate to the financial performance of energy-sector equities, with a focus on differences between fossil fuel and renewable energy markets. Using daily data from 2018–2024 for WTI crude oil futures (CL=F), the Energy Select Sector SPDR Fund (XLE), and the iShares Global Clean Energy ETF (ICLN), prices are transformed into log-returns and used in a forecasting setup. Predictors are constructed from lagged oil returns and rolling-window statistics to capture delayed and local effects. Predictive performance is assessed with an interpretable multiple linear regression benchmark and a Random Forest regressor to allow for nonlinearities and interactions. Evaluation relies on a strict chronological train–test split and a walk-forward validation procedure to avoid information leakage and to study temporal stability. The results suggest a stronger and more stable predictive relationship between oil dynamics and fossil fuel equities (XLE), while predictive performance for renewable energy equities (ICLN) appears weaker and less consistent across time. An event-based oil shock analysis further indicates more pronounced and directionally consistent reactions for XLE, whereas ICLN responses are more diffuse. Overall, oil-related information appears more informative for forecasting fossil-sector returns than renewable-sector returns at a daily frequency.**
 
-# 1. Introduction
+# Introduction
 
 Energy markets have historically been strongly influenced by fluctuations in crude oil prices (Hamilton, 2009). As a key input for transportation, industry, and electricity generation, oil prices affect production costs, investment decisions, and ultimately the valuation of energy-related firms. Consequently, the financial performance of fossil fuel companies has long been closely tied to movements in oil prices, both in levels and in volatility (Sadorsky, 2001).
 
@@ -43,7 +43,7 @@ To this end, the project combines feature engineering based on lagged returns an
 
 The remainder of the report is structured as follows. Section 2 reviews the relevant literature on oil prices and energy stock performance. Section 3 describes the data, feature engineering process, modeling choices, and validation strategy. Section 4 presents the empirical results, including model comparisons and shock analysis. Section 5 discusses the findings and their limitations, and Section 6 concludes with a summary of key insights and directions for future research.
 
-## 2. Literature Review
+## Literature Review
 
 A substantial body of empirical literature has examined the relationship between crude oil prices and the financial performance of energy-related firms. Early studies emphasize the central role of oil as a key production input, showing that oil price fluctuations affect corporate costs, profitability, and stock valuations, particularly for firms operating in energy-intensive sectors (Hamilton, 2009).
 
@@ -57,9 +57,9 @@ In addition, the time-series forecasting literature highlights the importance of
 
 Overall, while existing studies provide strong evidence of a link between oil prices and energy-related stock returns, important gaps remain regarding the stability, predictability, and temporal structure of this relationship. In particular, limited attention has been paid to short-horizon return forecasting under strictly chronological evaluation frameworks, as well as to systematic comparisons between fossil fuel and renewable energy assets. This project aims to address these gaps by adopting a time-series forecasting perspective combined with walk-forward validation and explicit benchmarking against naive models.
 
-# 3. Methodology
+# Methodology
 
-## 3.1 Data Description
+## Data Description
 The empirical analysis relies on daily financial market data for crude oil and energy-related equity assets (XLE, ICLN). Specifically, three instruments are considered: West Texas Intermediate (WTI) crude oil futures (ticker: CL=F), which serve as a benchmark for global oil prices; the Energy Select Sector SPDR Fund (XLE), representing publicly traded fossil fuel companies; and the iShares Global Clean Energy ETF (ICLN), representing firms operating in the renewable energy sector. All data are retrieved from Yahoo Finance (Yahoo Finance, 2025).
 
 The sample covers the period from 2018 to 2024, corresponding to approximately 1,500 daily trading observations per asset. This time span includes heterogeneous market conditions, including periods of high volatility, making it suitable for a time-series analysis of energy market dynamics. All price series are aligned on common trading dates and sorted chronologically to ensure temporal consistency across assets. Observations with missing values are removed in order to construct a balanced dataset.
@@ -68,7 +68,7 @@ To facilitate meaningful comparisons and reduce non-stationarity, daily prices a
 
 After the transformation, the analysis is conducted exclusively on return series rather than price levels. This choice reflects a forecasting-oriented perspective, as returns are the relevant quantity for asset pricing and risk evaluation. The return series are subsequently augmented with lagged values and rolling-window statistics, resulting in a multivariate feature set used for predictive modeling. The resulting dataset constitutes the basis for subsequent feature engineering and modeling steps.
 
-## 3.2 Approach
+## Approach
 This project adopts a time-series forecasting framework to assess the predictive relationship between crude oil returns and the returns of energy-related equity assets. The methodological design ensures temporal consistency, prevents information leakage, and enables a robust comparison between linear and non-linear predictive models.
 
 ### Feature Engineering
@@ -102,7 +102,7 @@ Beyond a single train–test split, a walk-forward validation procedure is imple
 
 Model performance is evaluated using three standard regression metrics: the Root Mean Squared Error (RMSE), the Mean Absolute Error (MAE), and the coefficient of determination (\( R^2 \)). These metrics provide complementary perspectives on prediction accuracy, error magnitude, and explanatory power. All evaluations are conducted strictly out of sample.
 
-## 3.3 Implementation
+## Implementation
 
 ### Languages and libraries
 The project is implemented in **Python** using standard data-science libraries:
@@ -184,14 +184,14 @@ for split_id, (train_idx, val_idx) in enumerate(tscv.split(X_train), start=1):
             results.append(metrics)
 ```
 
-# 4. Results
+# Results
 
-## 4.1 Experimental Setup
+## Experimental Setup
 All experiments are conducted using a strictly chronological evaluation framework to respect the time-series structure of the data and prevent information leakage. Model performance is assessed using both a fixed out-of-sample test set and a walk-forward validation procedure based on expanding training windows over time.
 
 The implementation is carried out in Python using pandas and numpy for data handling and scikit-learn for modeling and evaluation. The Random Forest model is trained with 200 trees (`n_estimators = 200`), a fixed random seed (`random_state = 42`), and parallel execution enabled. Linear regression is estimated within a pipeline including feature standardization.
 
-## 4.2 Performance Evaluation
+## Performance Evaluation
 
 Model performance is evaluated using RMSE, MAE, and \(R^2\), computed strictly out of sample. Results are reported separately for fossil fuel assets (XLE) and renewable energy assets (ICLN) and compared against a naive benchmark.
 
@@ -225,7 +225,7 @@ The walk-forward validation results confirm the lack of stable predictive perfor
 Across expanding training windows, average \(R^2\) values remain negative for all models and both assets, with substantial variability across folds.
 These results suggest that predictive relationships, when present, are weak and unstable across different market periods. 
 
-## 4.3 Visualizations
+## Visualizations
 
 Figure 1 illustrates out-of-sample predicted versus realized returns for XLE, highlighting the limited ability of the models to track short-term return dynamics.
 
@@ -241,7 +241,7 @@ These empirical findings provide the basis for the economic interpretation and d
 
 ![Walk-forward \(R^2\) over time (XLE)](outputs/plots/r2_timeseries/r2_timeseries_XLE_target.png)
 
-# 5. Discussion
+# Discussion
 
 This section interprets the empirical results obtained in the previous section and relates them to the objectives of the project. The discussion focuses on model performance, methodological challenges, and the implications of the findings for oil–energy return predictability.
 
@@ -260,9 +260,9 @@ Several limitations should be acknowledged. First, the analysis focuses on daily
 **Surprising findings.**  
 An unexpected result is the lack of improvement from the Random Forest model relative to linear regression. Despite its ability to capture nonlinearities, the Random Forest does not deliver superior or more stable out-of-sample performance. This suggests that increased model complexity does not necessarily translate into better predictive accuracy in this context, and that the underlying return-generating process may be dominated by noise rather than exploitable structure.
 
-# 6. Conclusion
+# Conclusion
 
-## 6.1 Summary
+## Summary
 
 This project investigated the relationship between crude oil price dynamics and energy-sector financial assets, with a particular focus on comparing fossil fuel (XLE) and renewable energy (ICLN) markets. Using daily data and a strictly chronological evaluation framework, the analysis combined out-of-sample testing with walk-forward validation to assess predictive performance in a robust and realistic setting.
 
@@ -270,7 +270,7 @@ The main empirical finding is the absence of stable and economically meaningful 
 
 Despite these results, the project successfully meets its methodological objectives. It demonstrates the importance of rigorous time-series validation, highlights the instability of predictive relationships over time, and provides a transparent comparison between fossil and renewable energy assets. More broadly, the findings reinforce the view that short-term return forecasting in liquid financial markets is inherently challenging and that apparent in-sample relationships may not translate into robust out-of-sample gains.
 
-## 6.2 Future Work
+## Future Work
 
 Several extensions could be considered to further explore the oil–energy relationship. From a methodological perspective, incorporating longer forecast horizons or regime-switching models may help capture slower-moving dynamics that are not observable at the daily frequency. Additional experiments could also involve alternative machine learning approaches, such as regularized linear models or sequence-based architectures, while maintaining strict out-of-sample evaluation.
 
@@ -302,6 +302,10 @@ Yahoo Finance. (2025). Financial market data. https://finance.yahoo.com/
 
 ![Walk-forward (R^2) over time (ICLN)](outputs/plots/r2_timeseries/r2_timeseries_ICLN_target.png)
 
-## Appendix B: Code Repository
+## Appendix B: AI Tools Used
+
+AI tools were used as supportive instruments during this project. ChatGPT was used to assist with code drafting, debugging, and clarification of Python syntax, as well as for structuring parts of the analysis. GitHub Copilot was used to facilitate code completion and improve coding efficiency. All data processing, modeling choices, analyses, results, and interpretations were designed, implemented, and validated by the author.
+
+## Appendix C: Code Repository
 
 **GitHub Repository:** https://github.com/lschweb1/oil-energy-project.git
