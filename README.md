@@ -63,7 +63,8 @@ oil-energy-project/
 │
 ├── main.py                          # Entry point (fully reproducible)
 ├── PROPOSAL.md                      # Project proposal (Markdown)
-├── project_report.md                # Final report (Markdown)
+├── REPORT.md              # GitHub-readable report (Markdown)
+├── project_report.md      # Final report source (Pandoc/Markdown)
 ├── README.md
 ├── environment.yml
 ├── requirements.txt
