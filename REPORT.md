@@ -207,8 +207,6 @@ For both XLE and ICLN, predictive accuracy remains limited, with negative out-of
 Linear Regression and Random Forest exhibit comparable error magnitudes, suggesting limited gains from increased model complexity.
 
 **Table 2.** *Walk-forward (expanding window) validation performance (mean and standard deviation across folds).*
-\begingroup
-\small
 
 | target      | model             |   mean_RMSE |   std_RMSE |   mean_MAE |   std_MAE |   mean_R2 |   std_R2 |
 |:------------|:------------------|------------:|-----------:|-----------:|----------:|----------:|---------:|
@@ -218,8 +216,6 @@ Linear Regression and Random Forest exhibit comparable error magnitudes, suggest
 | XLE_target  | Linear Regression |    0.024926 |   0.010035 |   0.018042 |  0.005346 | -0.342568 | 0.309667 |
 | XLE_target  | Naive             |    0.022135 |   0.009947 |   0.016151 |  0.005543 | -0.004989 | 0.005878 |
 | XLE_target  | Random Forest     |    0.023999 |   0.010310 |   0.017231 |  0.005860 | -0.192473 | 0.177689 |
-
-\endgroup
 
 The walk-forward validation results confirm the lack of stable predictive performance over time.
 Across expanding training windows, average \(R^2\) values remain negative for all models and both assets, with substantial variability across folds.
@@ -276,7 +272,6 @@ Several extensions could be considered to further explore the oil–energy relat
 
 From a data perspective, enriching the feature set with macroeconomic indicators, volatility measures, or expectations-based variables could provide additional predictive content. Finally, future work could shift the focus from statistical accuracy to economic relevance by evaluating trading strategies, risk-adjusted performance, or portfolio-level implications, offering a more applied perspective on the economic impact of oil price fluctuations.
 
-\clearpage
 # References
 
 Hamilton, J. D. (2009). Causes and consequences of the oil shock of 2007–08. *Brookings Papers on Economic Activity*, 40(1), 215–261. https://doi.org/10.3386/w15002
@@ -293,7 +288,6 @@ Tsay, R. S. (2006). *Analysis of Financial Time Series* (2nd ed.). Technometrics
 
 Yahoo Finance. (2025). Financial market data. https://finance.yahoo.com/
 
-\clearpage
 # Appendices
 
 ## Appendix A: Additional Results

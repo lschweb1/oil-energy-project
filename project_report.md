@@ -247,6 +247,8 @@ These empirical findings provide the basis for the economic interpretation and d
 
 ![*Walk-forward \(R^2\) over time (XLE)*](outputs/plots/r2_timeseries/r2_timeseries_XLE_target.png)
 
+\clearpage
+
 # Discussion
 
 This section interprets the empirical results obtained in the previous section and relates them to the objectives of the project. The discussion focuses on model performance, methodological challenges, and the implications of the findings for oil–energy return predictability.
