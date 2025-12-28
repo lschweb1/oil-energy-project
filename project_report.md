@@ -1,9 +1,7 @@
 ---
-geometry:
-  - left=2.5cm
-  - right=2.5cm
-  - top=2.5cm
-  - bottom=3cm
+documentclass: article
+fontsize: 11pt
+geometry: margin=1in
 ---
 
 \thispagestyle{empty}
@@ -195,7 +193,7 @@ The implementation is carried out in Python using pandas and numpy for data hand
 
 Model performance is evaluated using RMSE, MAE, and \(R^2\), computed strictly out of sample. Results are reported separately for fossil fuel assets (XLE) and renewable energy assets (ICLN) and compared against a naive benchmark.
 
-**Table 1** Reports performance on the held-out test set.
+**Table 1.** *Reports performance on the held-out test set.*
 
 | target      | model             |     RMSE |      MAE |        R2 |
 |:------------|:------------------|---------:|---------:|----------:|
@@ -210,7 +208,9 @@ Overall, none of the predictive models consistently outperform the naive benchma
 For both XLE and ICLN, predictive accuracy remains limited, with negative out-of-sample \(R^2\) values across models, indicating that simple benchmarks are difficult to beat in short-horizon financial return forecasting.
 Linear Regression and Random Forest exhibit comparable error magnitudes, suggesting limited gains from increased model complexity.
 
-**Table 2** Walk-forward (expanding window) validation performance (mean and standard deviation across folds).*
+**Table 2.** *Walk-forward (expanding window) validation performance (mean and standard deviation across folds).*
+\begingroup
+\small
 
 | target      | model             |   mean_RMSE |   std_RMSE |   mean_MAE |   std_MAE |   mean_R2 |   std_R2 |
 |:------------|:------------------|------------:|-----------:|-----------:|----------:|----------:|---------:|
@@ -220,6 +220,8 @@ Linear Regression and Random Forest exhibit comparable error magnitudes, suggest
 | XLE_target  | Linear Regression |    0.024926 |   0.010035 |   0.018042 |  0.005346 | -0.342568 | 0.309667 |
 | XLE_target  | Naive             |    0.022135 |   0.009947 |   0.016151 |  0.005543 | -0.004989 | 0.005878 |
 | XLE_target  | Random Forest     |    0.023999 |   0.010310 |   0.017231 |  0.005860 | -0.192473 | 0.177689 |
+
+\endgroup
 
 The walk-forward validation results confirm the lack of stable predictive performance over time.
 Across expanding training windows, average \(R^2\) values remain negative for all models and both assets, with substantial variability across folds.
@@ -235,11 +237,11 @@ Figure 3 presents the evolution of out-of-sample \(R^2\) over time under the wal
 
 These empirical findings provide the basis for the economic interpretation and discussion presented in the next section.
 
-![Out-of-sample predictions vs actual returns (XLE)](outputs/plots/true_vs_pred/true_vs_pred_XLE_target.png)
+![*Out-of-sample predictions vs actual returns (XLE)*](outputs/plots/true_vs_pred/true_vs_pred_XLE_target.png)
 
-![Prediction error distribution (ICLN)](outputs/plots/error_hist/error_hist_ICLN_target.png)
+![*Prediction error distribution (ICLN)*](outputs/plots/error_hist/error_hist_ICLN_target.png)
 
-![Walk-forward \(R^2\) over time (XLE)](outputs/plots/r2_timeseries/r2_timeseries_XLE_target.png)
+![*Walk-forward \(R^2\) over time (XLE)*](outputs/plots/r2_timeseries/r2_timeseries_XLE_target.png)
 
 # Discussion
 
