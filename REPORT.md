@@ -5,12 +5,16 @@ For the Pandoc source (PDF compilation), see [`project_report.md`](project_repor
 
 # Abstract
 
-This project examines how crude oil price dynamics relate to the financial performance of energy-sector equities, with a focus on differences between fossil fuel and renewable energy markets. Using daily data from 2018–2024 for WTI crude oil futures (CL=F), the Energy Select Sector SPDR Fund (XLE), and the iShares Global Clean Energy ETF (ICLN), prices are transformed into log-returns and used in a forecasting setup. Predictors are constructed from lagged oil returns and rolling-window statistics to capture delayed and local effects. Predictive performance is assessed with an interpretable multiple linear regression benchmark and a Random Forest regressor to allow for nonlinearities and interactions. Evaluation relies on a strict chronological train–test split and a walk-forward validation procedure to avoid information leakage and to study temporal stability. The results suggest a stronger and more stable predictive relationship between oil dynamics and fossil fuel equities (XLE), while predictive performance for renewable energy equities (ICLN) appears weaker and less consistent across time. An event-based oil shock analysis further indicates more pronounced and directionally consistent reactions for XLE, whereas ICLN responses are more diffuse. Overall, oil-related information appears more informative for forecasting fossil-sector returns than renewable-sector returns at a daily frequency.
+**This project examines how crude oil price dynamics relate to the financial performance of energy-sector equities, with a focus on differences between fossil fuel and renewable energy markets. Using daily data from 2018–2024 for WTI crude oil futures (CL=F), the Energy Select Sector SPDR Fund (XLE), and the iShares Global Clean Energy ETF (ICLN), prices are transformed into log-returns and used in a forecasting setup. Predictors are constructed from lagged oil returns and rolling-window statistics to capture delayed and local effects. Predictive performance is assessed with an interpretable multiple linear regression benchmark and a Random Forest regressor to allow for nonlinearities and interactions. Evaluation relies on a strict chronological train–test split and a walk-forward validation procedure to avoid information leakage and to study temporal stability. The results suggest a relatively stronger sensitivity in error metrics between oil dynamics and fossil fuel equities (XLE), while predictive performance for renewable energy equities (ICLN) appears weaker and less consistent across time. An event-based oil shock analysis further indicates more pronounced and directionally consistent reactions for XLE, whereas ICLN responses are more diffuse. Overall, oil-related information appears more informative for forecasting fossil-sector returns than renewable-sector returns at a daily frequency.**
 
 # Contents
+
+- [Abstract](#abstract)
 - [Introduction](#introduction)
 - [Literature Review](#literature-review)
 - [Methodology](#methodology)
+- [Implementation](#implementation)
+- [Codebase and Reproducibility](#codebase-and-reproducibility)
 - [Results](#results)
 - [Discussion](#discussion)
 - [Conclusion](#conclusion)
@@ -31,7 +35,7 @@ To this end, the project combines feature engineering based on lagged returns an
 
 The remainder of the report is structured as follows. Section 2 reviews the relevant literature on oil prices and energy stock performance. Section 3 describes the data, feature engineering process, modeling choices, and validation strategy. Section 4 presents the empirical results, including model comparisons and shock analysis. Section 5 discusses the findings and their limitations, and Section 6 concludes with a summary of key insights and directions for future research.
 
-## Literature Review
+# Literature Review
 
 A substantial body of empirical literature has examined the relationship between crude oil prices and the financial performance of energy-related firms. Early studies emphasize the central role of oil as a key production input, showing that oil price fluctuations affect corporate costs, profitability, and stock valuations, particularly for firms operating in energy-intensive sectors (Hamilton, 2009).
 
@@ -90,9 +94,9 @@ Beyond a single train–test split, a walk-forward validation procedure is imple
 
 Model performance is evaluated using three standard regression metrics: the Root Mean Squared Error (RMSE), the Mean Absolute Error (MAE), and the coefficient of determination (\( R^2 \)). These metrics provide complementary perspectives on prediction accuracy, error magnitude, and explanatory power. All evaluations are conducted strictly out of sample.
 
-## Implementation
+# Implementation
 
-### Languages and libraries
+## Languages and libraries
 The project is implemented in **Python** using standard data-science libraries:
 - **Data handling**: pandas, numpy
 - **Data acquisition**: yfinance
@@ -100,7 +104,7 @@ The project is implemented in **Python** using standard data-science libraries:
 - **Visualization**: matplotlib
 - **Utilities**: pathlib (file and directory management)
 
-### System architecture
+## System architecture
 The workflow is organized as a modular notebook pipeline, where each notebook corresponds to a clearly defined stage:
 1. **Data download** (Yahoo Finance) and alignment of trading dates
 2. **Return construction** (log-returns) and dataset cleaning
@@ -112,7 +116,7 @@ The workflow is organized as a modular notebook pipeline, where each notebook co
 
 This structure ensures reproducibility and minimizes the risk of information leakage by maintaining strict chronological processing throughout the pipeline.
 
-### Key code components
+## Key code components
 Key reusable components include:
 - Feature construction utilities (lagged returns, rolling statistics)
 - Forecasting setup (target shifting to predict \(t+h\))
@@ -120,7 +124,7 @@ Key reusable components include:
 - Walk-forward validation loop (expanding window re-estimation and sequential evaluation)
 - Shock identification and event-window aggregation for extreme oil moves
 
-### Example code snippet
+## Example code snippet
 The following excerpt illustrates the walk-forward validation procedure implemented with an expanding training window and sequential out-of-sample evaluation.
 
 ```python
@@ -171,6 +175,10 @@ for split_id, (train_idx, val_idx) in enumerate(tscv.split(X_train), start=1):
             metrics["model"] = model_name
             results.append(metrics)
 ```
+# Codebase and Reproducibility
+The full codebase is publicly available on GitHub.  
+To reproduce the results, clone the repository, install the required Python dependencies (e.g., `pip install -r requirements.txt`), and run `python main.py` from the project root.  
+All tables and figures reported in this paper are automatically generated and saved to the `outputs/` directory.
 
 # Results
 
