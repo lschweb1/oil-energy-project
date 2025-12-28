@@ -40,3 +40,5 @@ Thumbs.db
 # Outputs accidentally created inside notebooks/
 notebooks/outputs/
 notebooks/executed/outputs/
+
+project_report.pdf
