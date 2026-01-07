@@ -29,7 +29,7 @@ Over the past two decades, however, the global energy landscape has undergone a 
 
 While a large body of literature documents the relationship between oil prices and energy-related stocks, existing evidence regarding renewable energy assets remains mixed (Henriques & Sadorsky, 2007). Some studies suggest a persistent dependence on oil markets, whereas others point toward a gradual decoupling as renewable technologies mature and develop distinct economic drivers. Moreover, many empirical analyses rely on static correlations (Diebold & Yilmaz, 2011) or contemporaneous relationships, which may fail to capture delayed effects, nonlinear dynamics, and regime-dependent responses, particularly during periods of extreme oil price movements.
 
-This project aims to address these limitations by adopting a time-series forecasting perspective (Tsay, 2006d). Rather than focusing on simple correlations, the analysis evaluates whether past oil price dynamics can help predict future returns of energy-related financial assets. Specifically, the project compares the predictive relationship between crude oil returns and two representative exchange-traded funds: the Energy Select Sector SPDR Fund (XLE), representing fossil fuel companies, and the iShares Global Clean Energy ETF (ICLN), representing renewable energy firms.
+This project aims to address these limitations by adopting a time-series forecasting perspective (Tsay, 2006). Rather than focusing on simple correlations, the analysis evaluates whether past oil price dynamics can help predict future returns of energy-related financial assets. Specifically, the project compares the predictive relationship between crude oil returns and two representative exchange-traded funds: the Energy Select Sector SPDR Fund (XLE), representing fossil fuel companies, and the iShares Global Clean Energy ETF (ICLN), representing renewable energy firms.
 
 To this end, the project combines feature engineering based on lagged returns and rolling statistics with both linear and non-linear predictive models. A multiple linear regression model is used as an interpretable benchmark, while a Random Forest regressor is employed to capture potential nonlinearities and interactions. Model performance is assessed using a strictly chronological train–test split and a walk-forward validation framework, ensuring a realistic and leakage-free evaluation. In addition, the project includes a dedicated analysis of oil price shocks in order to examine whether fossil and renewable assets respond differently during extreme market events.
 
@@ -274,17 +274,17 @@ From a data perspective, enriching the feature set with macroeconomic indicators
 
 # References
 
+Diebold, F. X., & Yilmaz, K. (2011). Better to give than to receive: Predictive directional measurement of volatility spillovers. *International Journal of Forecasting*, 28(1), 57–66. https://doi.org/10.1016/j.ijforecast.2011.02.006
+
 Hamilton, J. D. (2009). Causes and consequences of the oil shock of 2007–08. *Brookings Papers on Economic Activity*, 40(1), 215–261. https://doi.org/10.3386/w15002
 
 Henriques, I., & Sadorsky, P. (2007). Oil prices and the stock prices of alternative energy companies. *Energy Economics*, 30(3), 998–1010. https://doi.org/10.1016/j.eneco.2007.11.001
 
 International Energy Agency. (2023). *World Energy Outlook 2023*. https://doi.org/10.1787/827374a6-en
 
-Diebold, F. X., & Yilmaz, K. (2011). Better to give than to receive: Predictive directional measurement of volatility spillovers. *International Journal of Forecasting*, 28(1), 57–66. https://doi.org/10.1016/j.ijforecast.2011.02.006
-
 Sadorsky, P. (2001). Risk factors in stock returns of Canadian oil and gas companies. *Energy Economics*, 23(1), 17–28. https://doi.org/10.1016/S0140-9883(00)00072-4
 
-Tsay, R. S. (2006). *Analysis of Financial Time Series* (2nd ed.). Technometrics, 48(2), 316. https://doi.org/10.1198/tech.2006.s405
+Tsay, R. S. (2006). *Analysis of financial time series* (2nd ed.). Wiley.
 
 Yahoo Finance. (2025). Financial market data. https://finance.yahoo.com/
 
