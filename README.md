@@ -34,6 +34,8 @@ oil-energy-project/
 │   └── project_proposal.pdf         # Original project proposal (PDF)
 │
 ├── notebooks/
+│   ├── executed/
+│   │   └── 08_final_economic_analysis.executed.ipynb
 │   ├── 01_data_download.ipynb
 │   ├── 02_log_returns.ipynb
 │   ├── 03_feature_engineering.ipynb
@@ -41,9 +43,7 @@ oil-energy-project/
 │   ├── 05_modeling_final.ipynb
 │   ├── 06_time_series_validation.ipynb
 │   ├── 07_oil_shock_analysis.ipynb
-│   ├── 08_final_economic_analysis.ipynb
-│   └── executed/
-│       └── 08_final_economic_analysis.executed.ipynb
+│   └── 08_final_economic_analysis.ipynb
 │
 ├── outputs/
 │   └── plots/                       # Generated plots
@@ -58,17 +58,17 @@ oil-energy-project/
 ├── src/
 │   ├── __init__.py
 │   ├── data_loader.py
-│   ├── models.py
-│   └── evaluation.py
+│   ├── evaluation.py
+│   └── models.py
 │
-├── main.py                          # Entry point (fully reproducible)
-├── PROPOSAL.md                      # Project proposal (Markdown)
-├── REPORT.md              # GitHub-readable report (Markdown)
-├── project_report.md      # Final report source (Pandoc/Markdown)
-├── README.md
+├── .gitignore
 ├── environment.yml
-├── requirements.txt
-└── .gitignore
+├── main.py                 # Entry point (fully reproducible)
+├── project_report.md       # Final report source (Pandoc/Markdown)
+├── PROPOSAL.md             # Project proposal (Markdown)
+├── README.md
+├── REPORT.md               # GitHub-readable report (Markdown)
+└── requirements.txt
 ```
 
 ---
