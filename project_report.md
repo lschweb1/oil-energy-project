@@ -9,7 +9,7 @@ geometry: margin=1in
 \vspace*{3cm}
 
 \begin{center}
-{\LARGE \textbf{Impact of Oil Prices on the Stock Performance of Fossil and Renewable Energy Sectors}}\\[2cm]
+{\LARGE \textbf{The Impact of Oil Prices on the Stock Performance of Fossil and Renewable Energy Sectors}}\\[2cm]
 
 {\large Luca Schweblin}\\[0.5cm]
 {\large \textit{Université de Lausanne}}\\[0.3cm]
