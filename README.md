@@ -26,9 +26,9 @@ oil-energy-project/
 │
 ├── data/
 │   ├── raw/                         # No static raw files (data downloaded programmatically)
-│   ├── prices_2018_2024.parquet     # Clean price data
 │   ├── log_returns_2018_2024.parquet
-│   └── model_features_2018_2024.parquet
+│   ├── model_features_2018_2024.parquet
+│   └── prices_2018_2024.parquet     # Clean price data
 │
 ├── docs/
 │   └── project_proposal.pdf         # Original project proposal (PDF)
@@ -46,7 +46,8 @@ oil-energy-project/
 │   └── 08_final_economic_analysis.ipynb
 │
 ├── outputs/
-│   └── plots/                       # Generated plots
+│   ├── plots/        # Generated plots
+│   └── results/
 │
 ├── results/
 │   └── figures/
