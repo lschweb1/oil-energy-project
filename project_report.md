@@ -111,14 +111,29 @@ The project is implemented in **Python** using standard data-science libraries:
 - **Utilities**: pathlib (file and directory management)
 
 ## System architecture
+
 The workflow is organized as a modular notebook pipeline, where each notebook corresponds to a clearly defined stage:
-1. **Data download** (Yahoo Finance) and alignment of trading dates
-2. **Return construction** (log-returns) and dataset cleaning
-3. **Feature engineering** (lags and rolling-window statistics)
-4. **Modeling** (baseline, linear regression, random forest) and out-of-sample testing
-5. **Walk-forward validation** to assess stability across time
-6. **Oil shock analysis** to study extreme oil price movements and asset responses
-7. **Economic interpretation** and summary outputs (tables/plots saved to disk)
+
+1. **Data download** (Yahoo Finance) and alignment of trading dates  
+   (`01_data_download.ipynb`)
+
+2. **Return construction** (log-returns) and dataset cleaning  
+   (`02_log_returns.ipynb`)
+
+3. **Feature engineering** (lags and rolling-window statistics)  
+   (`03_feature_engineering.ipynb`)
+
+4. **Modeling** (baseline, linear regression, random forest) and out-of-sample testing  
+   (`04_modeling.ipynb`, `05_modeling_final.ipynb`)
+
+5. **Walk-forward validation** to assess stability across time  
+   (`06_time_series_validation.ipynb`)
+
+6. **Oil shock analysis** to study extreme oil price movements and asset responses  
+   (`07_oil_shock_analysis.ipynb`)
+
+7. **Economic interpretation** and summary outputs (tables/plots saved to disk)  
+   (`08_final_economic_analysis.ipynb`)
 
 This structure ensures reproducibility and minimizes the risk of information leakage by maintaining strict chronological processing throughout the pipeline.
 
