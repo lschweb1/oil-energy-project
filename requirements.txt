@@ -1,10 +1,6 @@
-pandas
-numpy
-matplotlib
-scikit-learn
-seaborn
-pyarrow
-nbconvert
-nbformat
-ipykernel
-yfinance
+pandas==2.3.1
+numpy==2.3.1
+scikit-learn==1.7.1
+pyarrow==21.0.0
+matplotlib==3.10.5
+pytest==9.0.2

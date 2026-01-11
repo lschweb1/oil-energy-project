@@ -62,6 +62,12 @@ oil-energy-project/
 │   ├── evaluation.py
 │   └── models.py
 │
+├── tests/
+│   ├── conftest.py
+│   ├── test_data_loader.py
+│   ├── test_evaluation.py
+│   └── test_models.py
+│
 ├── .gitignore
 ├── environment.yml
 ├── main.py                 # Entry point (fully reproducible)
