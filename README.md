@@ -50,11 +50,8 @@ oil-energy-project/
 │   └── results/
 │
 ├── results/
-│   └── figures/
-│       ├── error_hist/
-│       ├── r2_timeseries/
-│       ├── shock/
-│       └── true_vs_pred/
+│   ├── figures/          # Final figures used in the report
+│   └── metrics_*.json    # Generated evaluation metrics (reproducible)
 │
 ├── src/
 │   ├── __init__.py
